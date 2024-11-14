@@ -1,0 +1,108 @@
+En Java, las variables son contenedores para almacenar datos y se clasifican en diferentes tipos según el tipo de información que pueden almacenar. 
+Los tipos de variables en Java se dividen principalmente en **tipos primitivos** y **tipos de referencia**. 
+Cada tipo tiene un tamaño específico y un rango de valores que puede almacenar.
+
+---
+
+### 1. **Tipos de datos primitivos en Java**
+
+Los **tipos primitivos** en Java son los tipos de datos básicos y no están definidos en términos de otros tipos de datos. Existen 8 tipos primitivos en Java:
+
+**Números enteros**
+1. **byte**
+   - **Tamaño**: 8 bits (1 byte)
+   - **Rango**: -128 a 127
+   - **Uso**: Ideal para ahorrar memoria en grandes matrices donde los valores son pequeños.
+
+2. **short**
+   - **Tamaño**: 16 bits (2 bytes)
+   - **Rango**: -32,768 a 32,767
+   - **Uso**: Adecuado para datos numéricos pequeños donde el tamaño de `byte` es insuficiente.
+
+3. **int**
+   - **Tamaño**: 32 bits (4 bytes)
+   - **Rango**: -2,147,483,648 a 2,147,483,647
+   - **Uso**: Es el tipo de datos entero más común y se usa ampliamente en programas de Java.
+
+4. **long**
+   - **Tamaño**: 64 bits (8 bytes)
+   - **Rango**: -9,223,372,036,854,775,808 a 9,223,372,036,854,775,807
+   - **Uso**: Se usa cuando se necesitan valores numéricos más grandes que `int`. Para especificar un literal de `long`, se usa el sufijo `L` al final del número (ejemplo: `123L`).
+
+#### b) **Números en coma flotante**
+5. **float**
+   - **Tamaño**: 32 bits (4 bytes)
+   - **Rango**: Aproximadamente ±3.40282347E+38 (7 dígitos decimales de precisión)
+   - **Uso**: Se utiliza cuando se necesita un valor de punto flotante (decimal) con precisión simple. Para especificar un literal `float`, se usa el sufijo `f` (ejemplo: `3.14f`).
+
+6. **double**
+   - **Tamaño**: 64 bits (8 bytes)
+   - **Rango**: Aproximadamente ±1.79769313486231570E+308 (15 dígitos decimales de precisión)
+   - **Uso**: Es el tipo de punto flotante predeterminado y se usa cuando se requiere mayor precisión.
+
+#### c) **Tipos de carácter y booleano**
+7. **char**
+   - **Tamaño**: 16 bits (2 bytes)
+   - **Rango**: Caracteres Unicode (0 a 65,535)
+   - **Uso**: Almacena un solo carácter como letras o símbolos Unicode. Se define entre comillas simples (`'a'`, `'1'`, `'\u0041'`).
+
+8. **boolean**
+   - **Tamaño**: 1 bit (aunque en la implementación varía según JVM)
+   - **Rango**: `true` o `false`
+   - **Uso**: Representa valores lógicos y se usa en expresiones de control de flujo, como condiciones (`if`, `while`).
+
+---
+
+### 2. **Tipos de datos de referencia en Java**
+
+A diferencia de los tipos primitivos, los **tipos de referencia** en Java se utilizan para almacenar referencias a objetos. No almacenan los datos directamente, sino una dirección de memoria que apunta al objeto en el “heap”. Los tipos de referencia incluyen:
+
+1. **Clases (`class`)**
+   - Java permite definir clases que pueden tener variables de instancia y métodos. Las clases son los bloques de construcción para crear objetos y estructuras de datos complejas.
+
+2. **Interfaces (`interface`)**
+   - Una interfaz define un conjunto de métodos que una clase puede implementar. Las interfaces no almacenan datos, solo definen métodos que las clases concretas deben implementar.
+
+3. **Arreglos (`array`)**
+   - Los arreglos son estructuras que permiten almacenar múltiples valores del mismo tipo en una estructura indexada. Los arreglos en Java son de longitud fija una vez inicializados.
+
+4. **Cadenas (`String`)**
+   - Aunque las cadenas no son un tipo primitivo, `String` es una clase en Java que permite almacenar secuencias de caracteres. Las cadenas son inmutables y se tratan como tipos de referencia.
+
+5. **Enumeraciones (`enum`)**
+   - Un tipo especial de clase que define un conjunto de constantes. Las enumeraciones se usan para representar un conjunto de valores constantes conocidos en tiempo de compilación.
+
+---
+
+### Ejemplos de Capacidad y Usos de Variables en Java
+
+| Tipo  | Tamaño en bits | Rango o Capacidad                                     | Ejemplo de uso                  |
+|-------|-----------------|-------------------------------------------------------|---------------------------------|
+| byte  | 8              | -128 a 127                                            | `byte age = 25;`               |
+| short | 16             | -32,768 a 32,767                                      | `short year = 2022;`           |
+| int   | 32             | -2,147,483,648 a 2,147,483,647                        | `int salary = 50000;`          |
+| long  | 64             | -9,223,372,036,854,775,808 a 9,223,372,036,854,775,807| `long distance = 123456789L;`  |
+| float | 32             | ±3.40282347E+38 (7 dígitos)                           | `float pi = 3.14f;`            |
+| double| 64             | ±1.79769313486231570E+308 (15 dígitos)                | `double g = 9.80665;`          |
+| char  | 16             | 0 a 65,535 (Unicode)                                  | `char initial = 'A';`          |
+| boolean| 1             | `true` o `false`                                      | `boolean isJavaFun = true;`    |
+-------------------------------------------------------------------------------------------------------------------
+---
+
+### Notas Importantes
+
+- **Conversión de tipos**: 
+En Java, puedes realizar conversiones de tipo explícitas e implícitas (también llamadas *casting*). 
+Los tipos primitivos de menor tamaño pueden convertirse automáticamente a tipos más grandes (ejemplo: `int` a `long`), 
+mientras que la conversión de tipos grandes a pequeños debe hacerse explícitamente.
+  
+- **Overflow y Underflow**: 
+Si se intenta almacenar un valor fuera del rango de un tipo primitivo, ocurrirá un desbordamiento (*overflow*) o un subdesbordamiento (*underflow*),
+provocando resultados inesperados sin causar errores de ejecución.
+
+- **Inmutabilidad de `String`**: 
+En Java, las cadenas (`String`) son inmutables, lo que significa que no se pueden modificar después de su creación. 
+Las operaciones que parecen modificar una cadena en realidad crean una nueva instancia de `String`.
+
+---
+
