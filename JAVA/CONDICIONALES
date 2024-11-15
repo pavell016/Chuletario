@@ -1,0 +1,89 @@
+OPERADORES DE COMPARACION
+
+"==" --> compara si dos valores son iguales
+"!=" --> compara si los valores son distintos
+"<  /  >" --> comparadores mayor y menor que
+"<=  /  >=" --> comparadores mayor/menor o igual que
+
+
+OPERADORES LOGICOS
+
+"&&" --> operador logico AND (se usa en los condicionales en caso de que queramos que se ejecute un codigo cuando 2 o mas condiciones se cumplan OBLIGATORIAMENTE)
+"||" --> operador logico OR (se usa en los condicionales en caso de que que queramos que se ejecute el codigo cuando UNA o MAS condiciones se cumplen)
+"!" --> operador logico NOT (se usa para abreviar algunas expresiones y comprueba que el resultado sea  el inverso, por ejemplo !true es lo mismo que false)
+
+CONDICIONALES
+
+IF
+
+dependiendo de la condicion que se le asigne a un IF  se ejecutara un codigo o otro y en el caso de que la condicion no se cumpla no ejecutara el codigo dentro del IF
+
+  *caso de uso
+
+  if (condicion == true){
+    //codigo if
+  }else{
+    //codigo else
+  }
+en este caso si la conficion es verdadera se ejecutara el codigo "//codigo if" y en el caso de que la condicion no sea verdadero se ejecutara el "//codigo else"
+
+  los ifs se pueden usar de diferentes maneras por ejemplo, podemos prescindir de la parte else de la estructura para que compruebe la condicion y cuando termine el IF
+  passar de largo a la siguiente parte del codigo
+
+  if (condicion == true){
+    //codigo if
+  }
+
+  tambien podemos anidar varios IF o condiciones a un mismo IF usando una estructura IF-ELSE IF
+
+  if (condicion == true && age == 3){
+    //codigo if
+  }else if(condicion == false && age == 7){
+    //codigo else if
+  }
+
+  por ultimo tambien podemos simplificar la estructura de un if solo que esta forma confunde a algunos principiantes ya que no es tan clara visualmente
+
+  boolean program = (condicion == true) ? true : false;
+
+
+SWITCH
+
+es SWITCH es una estructura que opera segun el valor de una variable y dependiendo de este hay diferentes casos que de ejecutaran a causa de este
+
+  *caso de uso
+
+    switch (dia) {
+      case 1:
+          nombreDia = "Lunes";
+          break;
+      case 2:
+          nombreDia = "Martes";
+          break;
+      case 3:
+          nombreDia = "Miércoles";
+          break;
+      case 4:
+          nombreDia = "Jueves";
+          break;
+      case 5:
+          nombreDia = "Viernes";
+          break;
+      case 6:
+          nombreDia = "Sábado";
+          break;
+      case 7:
+          nombreDia = "Domingo";
+          break;
+      default:
+          nombreDia = "Día inválido";
+  }
+  System.out.println("Hoy es " + nombreDia);
+
+en este caso segun la variable dia el programa tendra un comportamiento diferente
+
+notar tambien que la palabra "break" que aparece en cada caso del SWITCH sirve para que una vez se cumpla la accion de cada caso salga del SWITCH, ya que en caso 
+contrario el codigo estaria haciendo un bucle infinito sin salir del SWITCH.
+
+por otra parte en el caso de que la variable no sea igual a ninguno de los casos previstos por el switch tenemos el "default" que se ejecutara solo en caso que 
+la variable no haga match con ninguno de los casos
